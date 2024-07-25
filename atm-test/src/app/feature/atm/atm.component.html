@@ -1,0 +1,6 @@
+<app-table
+  [columnDefs]="columnDefs"
+  [actions]="actions"
+  [data]="(atm$ | async) ?? []"
+  (actionEmitter)="handleActions($event)"
+></app-table>

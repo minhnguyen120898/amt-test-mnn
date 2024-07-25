@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Edit ATM</h1>
+<form [formGroup]="atmForm" (ngSubmit)="onSave()">
+  <div mat-dialog-content class="dialog-content">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="atmForm.get('name')?.hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Manufacturer</mat-label>
+      <input matInput formControlName="manufacturer">
+      <mat-error *ngIf="atmForm.get('manufacturer')?.hasError('required')">Manufacturer is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type">
+      <mat-error *ngIf="atmForm.get('type')?.hasError('required')">Type is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Serial Number</mat-label>
+      <input matInput formControlName="serialNumber">
+      <mat-error *ngIf="atmForm.get('serialNumber')?.hasError('required')">Serial Number is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="image">
+      <mat-error *ngIf="atmForm.get('image')?.hasError('required')">Image URL is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="dialog-actions">
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button color="primary" type="submit">Save</button>
+  </div>
+</form>
